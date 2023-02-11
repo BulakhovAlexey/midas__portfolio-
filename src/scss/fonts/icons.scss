@@ -1,0 +1,69 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+._icon-arrow-up-dowm:before {
+	content: "\e900";
+  }
+  ._icon-chat:before {
+	content: "\e901";
+  }
+  ._icon-contract:before {
+	content: "\e902";
+  }
+  ._icon-discord:before {
+	content: "\e903";
+  }
+  ._icon-flame:before {
+	content: "\e904";
+  }
+  ._icon-fox:before {
+	content: "\e905";
+  }
+  ._icon-Icon:before {
+	content: "\e90a";
+  }
+  ._icon-logo:before {
+	content: "\e90b";
+  }
+  ._icon-scan:before {
+	content: "\e90c";
+  }
+  ._icon-spoller-arrow:before {
+	content: "\e90d";
+  }
+  ._icon-storm:before {
+	content: "\e90e";
+  }
+  ._icon-support:before {
+	content: "\e90f";
+  }
+  ._icon-telegram:before {
+	content: "\e910";
+  }
+  ._icon-total:before {
+	content: "\e911";
+  }
+  ._icon-user:before {
+	content: "\e912";
+  }
+  ._icon-btc:before {
+	content: "\e914";
+  }
+  ._icon-wallet:before {
+	content: "\e915";
+  }
+  

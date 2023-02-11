@@ -1,0 +1,143 @@
+//========================================================================================================================================================
+.header {
+	background: #0A0C0F;
+	&__menu {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: rem(14);
+		@media (max-width:$mobile){
+			 justify-content: space-between; 
+		}
+	}
+}
+.menu {
+	&__logo {
+		position: relative;
+		z-index: 15;
+		font-size: rem(24);
+		@include adaptiveValue("font-size",24 ,16 );
+	}
+	&__body {
+		padding: rem(14) rem(0);	  
+	}
+	&__list {
+		@media (max-width:$mobile){
+			display: none;
+		}
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	&__item {
+		position: relative;
+		margin: rem(20) rem(8);
+		&:last-child{
+			&:hover{
+				.menu__sub-list {
+					display: block;
+				}
+			}
+		}
+	}
+	&__link {
+		color: $mainColorOp;
+		padding: rem(6) rem(12);
+		border: 1px solid rgba(255, 255, 255, 0);
+		transition: all 0.3s ease 0s;
+		&._icon-spoller-arrow{
+			display: inline-flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: flex-end;
+		}
+		@media (any-hover: hover){
+			&:hover{
+				background: rgba(255, 255, 255, 0.08);
+				border: 1px solid rgba(255, 255, 255, 0.02);
+				border-radius: 12px;
+				color: $mainColor;
+			}
+		}
+	}
+	&__sub-list{
+		padding-top: rem(15);
+		display: none;
+		position: absolute;
+		width: 100%;
+		left: rem(12);
+		top: rem(30);
+	}
+	&__sub-link{
+	}
+	&__login {
+	}
+	&__icon {
+	}
+}
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 15;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: rgb(255, 255, 255);
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+html.menu-open .menu__list {
+	display: block;
+	// flex-direction: column;
+	// justify-content: flex-start;
+	// align-items: flex-start;
+	position: absolute;
+	z-index: 14;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	padding-top: rem(70);
+	background-color: rgb(6, 0, 0);
+}

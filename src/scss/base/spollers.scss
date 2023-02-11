@@ -1,0 +1,128 @@
+// Основные спойлеры
+// Фрагмент (HTML): spoller
+
+// Спойлеры блокируют
+.spollers {
+	display: grid;
+	gap: 15px;
+	max-width: rem(780);
+	margin: 0 auto;
+}
+// Спойлер
+.spollers__item {
+	text-align: left;
+}
+	
+// Заголовок спойлера
+.spollers__title {
+	font-weight: 600;
+	@include adaptiveValue("font-size", 24, 16);
+	line-height: math.div(32 , 24);
+	width: 100%;
+	cursor: default;
+	text-align: left;
+	background: #181B20;
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	border-radius: 24px;
+	@include adaptiveValue("padding",24 , 16);
+	position: relative;
+	transition: all 0.3s ease 0s;
+	color: white;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	&._spoller-active{
+		border: 1px solid #43A1F7;
+		&::before{
+			background: #43A1F7;
+			box-shadow: 0px 12px 40px -12px rgba(67, 161, 247, 0.5), inset 0px 6px 16px rgba(255, 255, 255, 0.16);
+			transform: scaleY(-1);
+			@media (max-width:$mobile){
+				 background: none; 
+				 box-shadow: none;
+			}
+		}
+	}
+	&::before{
+		padding: rem(17) rem(17);
+		background: #22252A;
+		border-radius: 50%;
+		transition: all 0.3s ease 0s;
+		margin-left: rem(10);
+		@media (max-width:$mobile){
+			background: none; 
+			box-shadow: none;
+			padding: rem(0);
+	   }
+	}
+	&._spoller-active{
+		border-radius: 24px 24px 0 0;
+		border-bottom: none;
+	}
+	._spoller-init & {
+		cursor: pointer;
+		// &::after {
+		// 	content: "";
+		// 	position: absolute;
+		// 	right: 16px;
+		// 	top: 50%;
+		// 	width: rem(14);
+		// 	height: rem(7);
+		// 	background: url('@img/icons/arrow-down.svg') 0 0 no-repeat;
+		// 	transition: transform 0.5s ease 0s;
+		// 	padding: rem(20) rem(17);
+		// 	background: #22252A;
+		// 	border-radius: 100px;
+		// }
+		&._spoller-active {
+			// &::after {
+			// 	transform: scaleY(-1);
+			// }
+		}
+		/*
+		._spoller-init & {
+			position: relative;
+			width: 100%;
+			text-align: left;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: rem(12);
+				height: rem(1);
+				transition: all 0.3s ease 0s;
+				width: rem(10);
+				background-color: #000;
+			}
+			&::before {
+				transform: rotate(40deg);
+				right: rem(7);
+			}
+			&::after {
+				transform: rotate(-40deg);
+			}
+		}
+		&._spoller-active {
+			&::before {
+				transform: rotate(-40deg);
+			}
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+		*/
+	}
+}
+// Контент спойлера
+.spollers__body {
+	background: #181B20;
+	border: 1px solid #43A1F7;
+	border-radius:0 0 24px 24px;
+	padding:0 rem(24) rem(24) rem(24);
+	border-top: none;
+	@media (max-width:$mobile){
+		padding:0 rem(16) rem(16) rem(16);
+	}
+}

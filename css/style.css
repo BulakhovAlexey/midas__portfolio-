@@ -3631,6 +3631,18 @@ html.menu-open .menu__list {
     gap: 0.5rem;
   }
 
+  .box-metrics__upper {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+
+  .box-metrics__low-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+
   .box-stake {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

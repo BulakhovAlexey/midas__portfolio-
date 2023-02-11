@@ -3476,10 +3476,6 @@ html.menu-open .menu__list {
     margin-bottom: 3rem;
   }
 
-  .faq__link {
-    font-size: 1.25rem;
-  }
-
   .body-spoller__title {
     font-size: 1rem;
   }
@@ -3520,6 +3516,12 @@ html.menu-open .menu__list {
 
   .first-utility-animation__mounth span {
     padding-right: 0.625rem;
+  }
+}
+
+@media (max-width: 48.125em) {
+  .faq__link {
+    font-size: 1.25rem;
   }
 }
 
@@ -4815,18 +4817,6 @@ html.menu-open .menu__list {
     }
 }
 
-@supports (font-size: clamp( 1.25rem , 0.9833333333rem  +  1.3333333333vw , 2rem )) {
-    .faq__link {
-      font-size: clamp( 1.25rem , 0.9833333333rem  +  1.3333333333vw , 2rem );
-    }
-}
-
-@supports not (font-size: clamp( 1.25rem , 0.9833333333rem  +  1.3333333333vw , 2rem )) {
-    .faq__link {
-      font-size: calc(1.25rem + 0.75 * (100vw - 20rem) / 56.25);
-    }
-}
-
 @supports (font-size: clamp( 1rem , 0.9111111111rem  +  0.4444444444vw , 1.25rem )) {
     .body-spoller__title {
       font-size: clamp( 1rem , 0.9111111111rem  +  0.4444444444vw , 1.25rem );
@@ -4886,6 +4876,20 @@ html.menu-open .menu__list {
 @supports not (padding-right: clamp( 0.625rem , -0.905720339rem  +  2.8813559322vw , 1.6875rem )) {
     .first-utility-animation__mounth span {
       padding-right: calc(0.625rem + 1.0625 * (100vw - 53.125rem) / 36.875);
+    }
+}
+}
+
+@media (min-width: 48.125em) and (max-width: 76.25em) {
+@supports (font-size: clamp( 1.25rem , -0.0333333333rem  +  2.6666666667vw , 2rem )) {
+    .faq__link {
+      font-size: clamp( 1.25rem , -0.0333333333rem  +  2.6666666667vw , 2rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.25rem , -0.0333333333rem  +  2.6666666667vw , 2rem )) {
+    .faq__link {
+      font-size: calc(1.25rem + 0.75 * (100vw - 48.125rem) / 28.125);
     }
 }
 }

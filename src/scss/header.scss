@@ -67,13 +67,8 @@
 		position: absolute;
 		width: 100%;
 		left: rem(12);
-		top: rem(30);
-	}
-	&__sub-link{
-	}
-	&__login {
-	}
-	&__icon {
+		top: rem(40);
+		background-color: rgb(6, 0, 6);
 	}
 }
 
@@ -129,9 +124,6 @@
 
 html.menu-open .menu__list {
 	display: block;
-	// flex-direction: column;
-	// justify-content: flex-start;
-	// align-items: flex-start;
 	position: absolute;
 	z-index: 14;
 	width: 100%;

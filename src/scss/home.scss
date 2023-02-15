@@ -455,6 +455,9 @@
         text-align: center;
         position: relative;
         z-index: 3;
+        @media (max-width:$mobile){
+            flex: 1 1 100%; 
+       }
     }
     &__low {
         display: flex;
@@ -468,6 +471,9 @@
     &__low-item{
         flex: 1 1 40%;
         @include adaptiveValue("padding-top", 52, 32);
+        @media (max-width:$mobile){
+             flex: 1 1 100%; 
+        }
     }
     &__num {
         font-weight: 700;
@@ -1123,7 +1129,6 @@
         padding: rem(20) rem(24);
         background: rgba(22, 24, 29, 0.94);
         border: 1px solid rgba(255, 255, 255, 0.04);
-        backdrop-filter: blur(40px);
         border-radius: 28px;
         @media (max-width:$mobile){
              padding: rem(20) rem(12); 
@@ -1200,7 +1205,8 @@
         letter-spacing: -0.016em;
         color: #FFFFFF;
         filter: blur(6px);
-        text-overflow: ellipsis
+        text-overflow: ellipsis;
+        
     }
     &__chat, 
     &__scan {
@@ -1547,7 +1553,6 @@
         padding: rem(6);
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.24);
-        backdrop-filter: blur(6.75556px);
         margin: rem(0) rem(5);
     }
 }
@@ -1631,7 +1636,10 @@
         }
     }
     .select__options{
-        top: 53px;
+        top: 49px;
+        @media (max-width:$mobile){
+             top: 39px; 
+        }
     }
 }
 //========================================================================================================================================================
@@ -1669,7 +1677,7 @@
         align-items: center;
         justify-content: space-between;
         font-weight: 600;
-        @include adaptiveValue("font-size", 32, 20);
+        @include adaptiveValue("font-size", 32, 20, 0, 1220, 770);
         line-height: math.div(40 , 32);
         letter-spacing: -0.02em;
         color: #43A1F7;

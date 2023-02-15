@@ -398,7 +398,7 @@ svg path {
   border-radius: 0 0 18px 18px;
   min-width: 100%;
   left: 0;
-  background: black;
+  background: rgba(0, 0, 0, 0.9);
   border-top: 0;
   padding: 10px 0px 5px 0px;
 }
@@ -656,7 +656,8 @@ svg path {
   position: absolute;
   width: 100%;
   left: 0.75rem;
-  top: 1.875rem;
+  top: 2.5rem;
+  background-color: rgb(6, 0, 6);
 }
 
 .icon-menu {
@@ -2048,8 +2049,6 @@ html.menu-open .menu__list {
   padding: 1.25rem 1.5rem;
   background: rgba(22, 24, 29, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.04);
-  -webkit-backdrop-filter: blur(40px);
-          backdrop-filter: blur(40px);
   border-radius: 28px;
 }
 
@@ -2580,8 +2579,6 @@ html.menu-open .menu__list {
   padding: 0.375rem;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.24);
-  -webkit-backdrop-filter: blur(6.75556px);
-          backdrop-filter: blur(6.75556px);
   margin: 0rem 0.3125rem;
 }
 
@@ -2676,7 +2673,7 @@ html.menu-open .menu__list {
 
 .select_form_2 .select__options,
 .select_form_3 .select__options {
-  top: 53px;
+  top: 49px;
 }
 
 .faq {
@@ -3767,6 +3764,11 @@ html.menu-open .menu__list {
   .select_form_2 .select__title,
   .select_form_3 .select__title {
     padding: 0.1875rem;
+  }
+
+  .select_form_2 .select__options,
+  .select_form_3 .select__options {
+    top: 39px;
   }
 
   .faq__links {

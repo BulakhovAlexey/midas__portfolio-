@@ -1259,12 +1259,10 @@ html.menu-open .menu__list {
           transform: translate(-50%, -50%);
   width: 93.4722222222%;
   padding-bottom: 77.9861111111%;
-  -webkit-filter: blur(200px);
-          filter: blur(200px);
 }
 
 .no-webp .metrics__blur-bg::after{
-  background: url("../img/testbg1.png") center no-repeat; }
+  background: url("../img/testbg1.png") center/cover no-repeat; }
 
 .metrics__blur-bg::after {
   position: absolute;
@@ -5028,6 +5026,6 @@ html.menu-open .menu__list {
   }
 }
 
-.webp .metrics__blur-bg::after{ background: url(../img/testbg1.webp) center no-repeat; }
+.webp .metrics__blur-bg::after{ background: url(../img/testbg1.webp) center/cover no-repeat; }
 
 .webp .select_form_2 .select__value::before, .webp .select_form_3 .select__value::before{ background: url(../img/icons/FTM-logo.webp) no-repeat center; }

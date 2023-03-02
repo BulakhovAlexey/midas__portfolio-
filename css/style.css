@@ -1156,6 +1156,10 @@ html.menu-open .menu__list {
   z-index: 4;
 }
 
+.metrics__container {
+  position: relative;
+}
+
 .metrics__title {
   text-align: center;
 }
@@ -1240,26 +1244,31 @@ html.menu-open .menu__list {
   line-height: 1;
 }
 
-.box-metrics {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-
-.box-metrics::after {
-  content: "";
+.metrics__blur-bg {
   position: absolute;
-  background: -o-radial-gradient(92.97% 0%, 149.83% 57218.98%, #43A1F7 0%, #00F79E 100%);
-  background: radial-gradient(149.83% 57218.98% at 92.97% 0%, #43A1F7 0%, #00F79E 100%);
-  -webkit-filter: blur(200px);
-          filter: blur(200px);
-  width: 80%;
-  height: 50%;
+  top: 50%;
   left: 50%;
-  top: 80%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.metrics__blur-bg::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgb(67, 161, 247);
+  background: -o-linear-gradient(3deg, rgb(0, 247, 158) 50%, rgb(67, 161, 247) 50%);
+  background: linear-gradient(87deg, rgb(0, 247, 158) 50%, rgb(67, 161, 247) 50%);
+  -webkit-filter: blur(180px);
+          filter: blur(180px);
+}
+
+.box-metrics {
+  text-align: center;
 }
 
 .box-metrics__upper {
@@ -2894,6 +2903,14 @@ html.menu-open .menu__list {
     font-size: 2rem;
   }
 
+  .metrics__blur-bg {
+    width: 43rem;
+  }
+
+  .metrics__blur-bg {
+    height: 15.4375rem;
+  }
+
   .box-metrics {
     padding-top: 6.75rem;
   }
@@ -3589,6 +3606,14 @@ html.menu-open .menu__list {
     font-size: 1.25rem;
   }
 
+  .metrics__blur-bg {
+    width: 22.5rem;
+  }
+
+  .metrics__blur-bg {
+    height: 8.0625rem;
+  }
+
   .box-metrics {
     padding-top: 2.5rem;
   }
@@ -4174,6 +4199,30 @@ html.menu-open .menu__list {
 @supports not (font-size: clamp( 1.25rem , 0.9360465116rem  +  1.3953488372vw , 2rem )) {
     .metrics__link {
       font-size: calc(1.25rem + 0.75 * (100vw - 22.5rem) / 53.75);
+    }
+}
+
+@supports (width: clamp( 22.5rem , 13.9186046512rem  +  38.1395348837vw , 43rem )) {
+    .metrics__blur-bg {
+      width: clamp( 22.5rem , 13.9186046512rem  +  38.1395348837vw , 43rem );
+    }
+}
+
+@supports not (width: clamp( 22.5rem , 13.9186046512rem  +  38.1395348837vw , 43rem )) {
+    .metrics__blur-bg {
+      width: calc(22.5rem + 20.5 * (100vw - 22.5rem) / 53.75);
+    }
+}
+
+@supports (height: clamp( 8.0625rem , 4.9752906977rem  +  13.7209302326vw , 15.4375rem )) {
+    .metrics__blur-bg {
+      height: clamp( 8.0625rem , 4.9752906977rem  +  13.7209302326vw , 15.4375rem );
+    }
+}
+
+@supports not (height: clamp( 8.0625rem , 4.9752906977rem  +  13.7209302326vw , 15.4375rem )) {
+    .metrics__blur-bg {
+      height: calc(8.0625rem + 7.375 * (100vw - 22.5rem) / 53.75);
     }
 }
 

@@ -1161,6 +1161,8 @@ html.menu-open .menu__list {
 }
 
 .metrics__title {
+  position: relative;
+  z-index: 3;
   text-align: center;
 }
 
@@ -1184,7 +1186,7 @@ html.menu-open .menu__list {
 
 .metrics__current-link {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   font-weight: 600;
   letter-spacing: 0.12em;
   font-size: 1.5rem;
@@ -1210,6 +1212,7 @@ html.menu-open .menu__list {
 
 .metrics__round {
   position: absolute;
+  z-index: 3;
   left: 50%;
   bottom: 100%;
   -webkit-transform: translateX(-50%);
@@ -1224,6 +1227,8 @@ html.menu-open .menu__list {
 }
 
 .metrics__item {
+  position: relative;
+  z-index: 3;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1246,28 +1251,34 @@ html.menu-open .menu__list {
 
 .metrics__blur-bg {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 81.3194444444%;
+  padding-bottom: 64.0277777778%;
 }
+
+.no-webp .metrics__blur-bg::after{
+  background: url("../img/testbg1.png") center/cover no-repeat; }
 
 .metrics__blur-bg::after {
   position: absolute;
+  z-index: -1;
   content: "";
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  background: rgb(67, 161, 247);
-  background: -o-linear-gradient(3deg, rgb(0, 247, 158) 50%, rgb(67, 161, 247) 50%);
-  background: linear-gradient(87deg, rgb(0, 247, 158) 50%, rgb(67, 161, 247) 50%);
-  -webkit-filter: blur(180px);
-          filter: blur(180px);
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
 }
 
 .box-metrics {
+  position: relative;
+  z-index: 3;
   text-align: center;
 }
 
@@ -2903,14 +2914,6 @@ html.menu-open .menu__list {
     font-size: 2rem;
   }
 
-  .metrics__blur-bg {
-    width: 43rem;
-  }
-
-  .metrics__blur-bg {
-    height: 15.4375rem;
-  }
-
   .box-metrics {
     padding-top: 6.75rem;
   }
@@ -3310,6 +3313,11 @@ html.menu-open .menu__list {
     gap: 0.5rem;
   }
 
+  .metrics__blur-bg::after {
+    -webkit-filter: blur(80px);
+            filter: blur(80px);
+  }
+
   .box-metrics__upper {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
@@ -3604,14 +3612,6 @@ html.menu-open .menu__list {
 
   .metrics__link {
     font-size: 1.25rem;
-  }
-
-  .metrics__blur-bg {
-    width: 22.5rem;
-  }
-
-  .metrics__blur-bg {
-    height: 8.0625rem;
   }
 
   .box-metrics {
@@ -4199,30 +4199,6 @@ html.menu-open .menu__list {
 @supports not (font-size: clamp( 1.25rem , 0.9360465116rem  +  1.3953488372vw , 2rem )) {
     .metrics__link {
       font-size: calc(1.25rem + 0.75 * (100vw - 22.5rem) / 53.75);
-    }
-}
-
-@supports (width: clamp( 22.5rem , 13.9186046512rem  +  38.1395348837vw , 43rem )) {
-    .metrics__blur-bg {
-      width: clamp( 22.5rem , 13.9186046512rem  +  38.1395348837vw , 43rem );
-    }
-}
-
-@supports not (width: clamp( 22.5rem , 13.9186046512rem  +  38.1395348837vw , 43rem )) {
-    .metrics__blur-bg {
-      width: calc(22.5rem + 20.5 * (100vw - 22.5rem) / 53.75);
-    }
-}
-
-@supports (height: clamp( 8.0625rem , 4.9752906977rem  +  13.7209302326vw , 15.4375rem )) {
-    .metrics__blur-bg {
-      height: clamp( 8.0625rem , 4.9752906977rem  +  13.7209302326vw , 15.4375rem );
-    }
-}
-
-@supports not (height: clamp( 8.0625rem , 4.9752906977rem  +  13.7209302326vw , 15.4375rem )) {
-    .metrics__blur-bg {
-      height: calc(8.0625rem + 7.375 * (100vw - 22.5rem) / 53.75);
     }
 }
 
@@ -5056,5 +5032,7 @@ html.menu-open .menu__list {
             transform: scale(1.1);
   }
 }
+
+.webp .metrics__blur-bg::after{ background: url(../img/testbg1.webp) center/cover no-repeat; }
 
 .webp .select_form_2 .select__value::before, .webp .select_form_3 .select__value::before{ background: url(../img/icons/FTM-logo.webp) no-repeat center; }
